@@ -1,0 +1,64 @@
+:root {
+    /* default theme color */
+    /* can be overrided by uses `themeConfig` option */
+    --slidev-theme-primary: #146a8cf4;
+    --slidev-theme-secondary: #146a8c80;
+    --slidev-theme-third: rgba(209, 68, 245, 0.5);
+    --slidev-font-family: "WenQuanYi Micro Hei";
+    --slidev-code-font-size: 1 em;
+    --slidev-code-line-height: 1.2em;
+    counter-reset: h2counter;
+    font-size: 1.5em;
+}
+
+
+.slidev-layout {
+    @apply h-full;
+    font-family: var(--slidev-font-family);
+    color: var(--slidev-theme-primary);
+
+    ul {
+        list-style-type: none;
+    }
+
+    .abs {
+        position: absolute;
+    }
+
+    h1 {
+        @apply text-8l leading-20;
+    }
+
+    h2 {
+        @apply text-6l;
+    }
+
+    h3 {
+        @apply text-4l;
+    }
+
+    h4 {
+        @apply text-2l;
+        font-weight: 700;
+    }
+
+    p {
+        font-size: 1.1em;
+    }
+}
+
+.slidev-layout.cover,
+.slidev-layout.intro {
+    @apply h-full grid;
+
+
+    h1+p {
+        @apply -mt-2 opacity-50 mb-4;
+    }
+
+    p+h2,
+    ul+h2,
+    table+h2 {
+        @apply mt-10;
+    }
+}
