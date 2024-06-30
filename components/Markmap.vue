@@ -1,8 +1,7 @@
 <script lang="ts" setup>
-import { ref, onMounted, onUpdated, computed } from 'vue';
 import { Transformer } from 'markmap-lib';
-import { Markmap } from 'markmap-view';
-import { deriveOptions } from 'markmap-view';
+import { Markmap, deriveOptions } from 'markmap-view';
+import { computed, onMounted, onUpdated, ref } from 'vue';
 
 const data = ref('')
 const transformer = new Transformer();
@@ -11,15 +10,15 @@ const svgRef = ref()
 const props = defineProps({
     colorFreezeLevel: {
         type: Number,
-        default: 3
+        default: 0
     },
     duration: {
         type: Number,
-        default: 200
+        default: 500
     },
     maxWidth: {
         type: Number,
-        default: 0
+        default: 0,
     },
     expandlevel: {
         type: Number,
@@ -57,6 +56,7 @@ onMounted(() => {
     });
     mm.value = Markmap.create(svgRef.value, options);
 
+
     setTimeout(update, 500)
 })
 </script>
@@ -69,8 +69,6 @@ onMounted(() => {
 .wrapper {
     height: 100%;
     width: 100%;
-    display: flex;
-    justify-content: center;
 }
 </style>
 <template>
@@ -78,6 +76,6 @@ onMounted(() => {
         <div class="hide" ref="data">
             <slot></slot>
         </div>
-        <svg ref="svgRef" :class="[wrapper, $attrs.class]" />
+        <svg ref="svgRef" :class="['wrapper', $attrs.class]" />
     </div>
 </template>

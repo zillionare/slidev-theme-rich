@@ -4,7 +4,19 @@
 
 [![NPM version](https://img.shields.io/npm/v/slidev-theme-rich?color=3AB9D4&label=)](https://www.npmjs.com/package/slidev-theme-rich)
 
-A Slidev theme that offers rich UI components and stunning visual effects.
+A Slidev theme that offers rich UI components and stunning visual effects. The following features are available:
+
+* [Device Mockup](#device-mockup)
+* [Cards](#card)
+  * [Naive Card](#card)
+  * [Profile Card](#profile)
+  * [S-curve split Card](#scard)
+  * [Markdown admonition card](#admonition)
+* [Markmap](#markmap)
+* [Emoji](#markdown-icon)
+* [Audio](#audio) with volume control, fadein and out
+* [Video](#video) 
+* [Animation](#animated-css)
 
 For what is Slidev, please refer to [Slidev](https://github.com/slidevjs/slidev).
 
@@ -256,7 +268,7 @@ Another example of card variants. The background and main text are splitted by a
 #### props
 
 | name          | type   | default | description                                                                               |
-|---------------|--------|---------|-------------------------------------------------------------------------------------------|
+| ------------- | ------ | ------- | ----------------------------------------------------------------------------------------- |
 | w             | string | 300px   | the width of the card                                                                     |
 | h             | string | 450px   | the height of the card                                                                    |
 | round         | string | 10px    | the radius of the card                                                                    |
@@ -294,14 +306,14 @@ An interactive way to show the agenda, toc of the presentation.
 ![alt text](public/markmap.png)
 
 #### props
-| name             | type    | default | description                                       |
-|------------------|---------|---------|---------------------------------------------------|
-| colorFreezeLevel | number  |       3 | After which level, markmap will freeze color map  |
-| duration         | number  |     200 | duration of animation when expand/collapse a node |
-| maxWidth         | number  |       0 | maximum width of the markmap                      |
-| expandLevel      | number  |      -1 | the level expands when start. -1 means expand all |
-| zoom             | boolean | true    | allow zoom                                        |
-| pan              | boolean | true    | show control panel                                |
+| name             | type    | default | description                                                                                                                             |
+| ---------------- | ------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| colorFreezeLevel | number  | 3       | Freeze color at the specified level of branches, i.e. all child branches will use the color of their ancestor node at the freeze level. |
+| duration         | number  | 500     | duration of animation when folding/unfolding a node                                                                                     |
+| maxWidth         | number  | 0       | maximum width of the markmap                                                                                                            |
+| expandLevel      | number  | -1      | the level expands when start. -1 means expand all                                                                                       |
+| zoom             | boolean | true    | allow zoom                                                                                                                              |
+| pan              | boolean | true    | show control panel                                                                                                                      |
 
 
 #### styling
@@ -358,6 +370,22 @@ As the example said, if you don't know how to refer to an icon, check https://em
 ![alt text](public/emoji.png)
 
 **Only Github shortcodes work**
+
+### Animated css
+
+Animated.css is also integrated in case you'll need some simple CSS animations.
+
+Usage:
+
+```md
+
+<div class="animate__animated animate__bounce abs top-300px w-200px">
+
+:dancer: bounce
+</div>
+```
+
+The element will automatically bounce the element when the page is loaded.
 
 ## Contributing
 

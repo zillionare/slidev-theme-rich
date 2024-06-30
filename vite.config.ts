@@ -1,6 +1,6 @@
 import MdItAdmon from 'markdown-it-admon';
 import { full as emoji } from 'markdown-it-emoji';
-import UnoCSS from 'unocss/vite';
+// import UnoCSS from 'unocss/vite';
 import { defineConfig } from 'vite';
 
 
@@ -24,7 +24,8 @@ export default defineConfig({
                 md.use(MdItAdmon);
             },
         },
-  },plugins:[
-    UnoCSS()
-  ]
+  }
+// ,plugins:[
+//     UnoCSS()
+//   ]
 })

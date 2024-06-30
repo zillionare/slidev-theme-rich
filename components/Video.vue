@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, computed } from 'vue';
+import { computed, onMounted } from 'vue';
 
 const props = defineProps({
     at: {
@@ -7,8 +7,8 @@ const props = defineProps({
         default: -1,
     },
     muted: {
-        type: Number,
-        default: "false"
+        type: String,
+        required: false
     },
     src: {
         type: String,

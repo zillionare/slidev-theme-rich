@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, computed, useAttrs } from 'vue';
+import { computed, onMounted, useAttrs } from 'vue';
 
 var gallery = {
     "du": "https://images.jieyu.ai/images/sounds/du.wav", /*很短的嘟*/
@@ -117,15 +117,15 @@ const audioId = computed(() => {
 
 onMounted(() => {
     var attrs = useAttrs()
-    if (attrs.controls !== undefined){
-        console.log("audio has controls")
+    if (attrs.controls !== undefined) {
+        // console.log("audio has controls")
         return
     }
     var timer = setInterval(() => {
         var sound = document.getElementById(audioId.value);
         if (sound == null) {
             clearInterval(timer);
-            console.info(`未找到Audio${audioId.value}`)
+            console.warn(`未找到Audio${audioId.value}`)
             return
         }
 

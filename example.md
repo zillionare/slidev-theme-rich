@@ -21,21 +21,21 @@ themeConfig:
 
 <Device class="abs top-410px left-350px" 
         kind="macbook-pro"
-        scale=0.8>
+        :scale=0.8>
 <Video src="https://cdn.pixabay.com/video/2016/09/21/5373-183629075_medium.mp4"/>
 </Device>
 
 <Device class="abs top-150px left-400px" 
         kind="apple-watch-s8"
         autoplay
-        scale=0.6>
+        :scale=0.6>
 <Video src="https://cdn.pixabay.com/video/2023/07/08/170617-843561820_large.mp4"/>
 </Device>
 
 <Device class="abs top-150px left-670px" 
         kind="apple-watch-ultra"
         autoplay loop="forever" muted 
-        scale=0.6
+        :scale=0.6
         style="transform: rotateZ(45deg)">
 <Video src="https://cdn.pixabay.com/video/2023/08/22/177210-857004263_large.mp4"/>
 </Device>
@@ -47,7 +47,7 @@ themeConfig:
 <Device kind="apple-watch-s8"
         autoplay
         loop="forever"
-        scale=0.6>
+        :scale=0.6>
     <Video src="*.mp4"/>
 </Device>
 ```

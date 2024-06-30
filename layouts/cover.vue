@@ -64,8 +64,7 @@
 .presenter {
     @apply text-2xl;
     position: absolute;
-    right: 0;
-    width: 18vw;
+    right: 2rem;
     height: 1.8rem;
     top: 70%;
     text-align: left;
