@@ -1,6 +1,6 @@
 # slidev-theme-rich
 
-[中文](README-cn.md)
+[中文文档](README-cn.md) [Live demo](https://zillionare.github.io/slidev-theme-rich/)
 
 [![NPM version](https://img.shields.io/npm/v/slidev-theme-rich?color=3AB9D4&label=)](https://www.npmjs.com/package/slidev-theme-rich)
 
@@ -32,8 +32,10 @@ For what is Slidev, please refer to [Slidev](https://github.com/slidevjs/slidev)
 <!--
   Put some screenshots here to demonstrate your theme
 
-  Live demo: [...]
+  
 -->
+
+[Live demo](https://zillionare.github.io/slidev-theme-rich/)
 
 ## 🛠 Install
 
