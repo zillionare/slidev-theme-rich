@@ -1,7 +1,7 @@
 ---
 theme: ./
 title: Quantitative Finance
-subtitle: 24 lessons learned from the market
+subtitle: Quant Finance 24 Lectures
 presenter: Aaron Yang
 brand: 量化风云
 logo: https://images.jieyu.ai/images/hot/lhfy-badge.png
@@ -22,7 +22,8 @@ themeConfig:
 <Device class="abs top-410px left-350px" 
         kind="macbook-pro"
         :scale=0.8>
-<Video src="https://cdn.pixabay.com/video/2016/09/21/5373-183629075_medium.mp4"/>
+        
+![](https://images.jieyu.ai/images/2024/07/24lecture-screenshot.jpg)
 </Device>
 
 <Device class="abs top-150px left-400px" 
@@ -182,6 +183,8 @@ Powered by [Device.css](https://github.com/picturepan2/devices.css) | Video sour
 </div>
 
 ---
+preload: false
+---
 
 <h1>Markmap</h1>
 
@@ -261,8 +264,8 @@ Using the following grammer to render admonition box:
 
 ```md
 
-!!! tip
-    this is a tip admonition!
+!!! attention
+    this is a attention admonition!
 
 !!! quote
     this is a quote/cite
@@ -274,11 +277,11 @@ Using the following grammer to render admonition box:
 
 <div>
 
-!!! example
-    this is an example/snippet
+!!! attention
+    是否应该进行业中性化，学界存在一定的争议。Sina Ehsani[^SEhsani]等人2022年的研究认为，采用多空对冲的投资者需要进行行业中性化，而单纯做多的投资者则应该避免行业中性化。
 
-!!! quote
-    this is a quote/cite
+!!! quote Oppenheimer
+    Algebra is like sheet of music.The important thing isn't can you read music, it's can you hear it.Can you hear the music, Robert?
 
 </div>
 
@@ -302,8 +305,6 @@ Using the following grammer to render admonition box:
 !!! summary
     summary/abstract
 
-
-
 !!! hint
     this is a hint/tip
 
@@ -320,8 +321,8 @@ Using the following grammer to render admonition box:
     a question/help/faq
 
 
-!!! attention
-    an attention
+!!! Example
+    an example
 
 
 !!! caution
@@ -333,23 +334,6 @@ Using the following grammer to render admonition box:
 !!! danger
     a danger/error/bug
 </div>
-
----
-
-# Use Icons
-
-- :smile: using icons is very simple, just write `:smile:`
-- :heart: visit https://emojipedia.org/ for more emoji icons
-
-the syntax:
-
-```md
-- :smile: using icons is very simple, just write `:smile:`
-- :heart: visit https://emojipedia.org/ for more emoji icons
-```
-
-!!! Notice
-    Be notified mark before bullet items are removed, so you could use whatever you like as the bullet mark.
 
 ---
 layout: two-cols
@@ -453,28 +437,147 @@ Powered by [Animate.css](https://animate.style/)
 </div>
 
 ---
-clicks: 1
+layout: two-cols
+clicks: 3
+---
+
+# Animation III
+
+Builds upon animate.css, Rich Theme offering a more streamlined animation experience.
+
+<Anime :at="[0,1,2]" action="fadeInLeftBig" style="color: red">
+    fade In Left
+</Anime>
+
+<Anime :at="[1,2]" action="jackInTheBox" style="color: blue" dur="3s">
+    jack In The Box
+</Anime>
+
+<Anime :at=2 action="flash" style="color: blue" dur="3s">
+    Flash me
+</Anime>
+
+<Anime :at=3 action="fadeOutRightBig" style="color: orange;font-size:60px" dur="10s">
+    Fade out right big
+</Anime>
+
+::right::
+
+```md
+
+<Anime :at=0 action="fadeInLeftBig">
+    fade In Left
+</Anime>
+
+<Anime :at=1 action="jackInTheBox" 
+       dur="3s">
+    jack In The Box
+</Anime>
+```
+
+---
+clicks: 8
+---
+
+# SoarText
+
+If you have only a few images but a lot to say, this component is for you.
+
+<SoarText class="abs top-150px w-80% h-80%  left-50px" :offsetY=200 colorMix="None">
+
+```md
+
+Nature’s first green is gold<bg>https://images.unsplash.com/photo-1555465910-31f7f20a184d?q=80&w=600
+
+Her hardest hue to hold
+
+Her early leaf’s a flower<bg>https://images.unsplash.com/photo-1478217655296-6ca53ca4b677?w=800
+
+But only so an hour
+
+Then leaf subsides to leaf
+
+So Eden sank to grief
+
+So dawn goes down to day
+
+Nothing gold can stay
+```
+</SoarText>
+
+---
+layout: two-cols
+clicks: 4
+---
+
+# Timeline
+
+Timeline is very important for story telling.
+
+<div class="abs left-50px top-400px">
+
+```yaml
+
+- event: 1606年
+  img: https://*.jpg w=150 roundCorner="50%"
+  title: 第一张股票
+  text: 1606年，荷兰东印度公司发行了人类第一张股票
+```
+</div>
+
+::right::
+
+<Timeline class="abs h-full w-full">
+
+```yaml
+
+- event: 1606年
+  img: https://images.jieyu.ai/images/2024/01/first-security.jpg w=150 roundCorner="50%" shadow="0 2px 5px rgba(0, 0, 0, 0.5)"
+  title: 第一张股票
+  text: 1606年，荷兰东印度公司发行了人类第一张股票
+
+- event: 1900年
+  img: https://images.jieyu.ai/images/2024/01/pricing-the-future.jpg w=150 roundCorner="50%" shadow="0 2px 5px rgba(0, 0, 0, 0.5)"
+  title: 布朗运动
+  text: 1900年，路易斯.巴斯里耶，第一个量化布朗运动的人，建立了数学模型来分析市场涨跌的概率的大小
+
+- event: 1973年
+  img: https://images.jieyu.ai/images/2023/10/Scholes.png w=150 roundCorner="50%" shadow="0 2px 5px rgba(0, 0, 0, 0.5)"
+  title: B-S公式
+  text: 1973年，迈伦.斯科尔斯，与费雪.布莱克一起发表《期权定价和公司债务》，为衍生品定价给出了堪称金融巫师的公式
+
+```
+</Timeline>
+
 ---
 
 # Card and Variants
 
 ## Naive Card
 
-<Card title="Card with header" 
+<Card title="CAPM理论" 
       class="abs top-250px w-300px h-450px"
       :enter="{opacity: 1}"
       :click-1="{opacity: 0}">
 
-this is Card with a Title
+#### 👨🏻‍🏫 威廉.夏普
+
+<p style="font-size: 20px">
+根据 CAPM 理论，资产的收益由无风险利率、市场暴露和 Alpha 共同组成，如果通过对冲将系统性风险进行度量和隔离，就可以获得超额绝对收益。
+</p>
 </Card>
 
 <Card :enter="{opacity: 1}"
-      :click-1="{opacity: 0}"
       class="abs top-250px left-450px w-300px h-450px">
 
-<img src="https://images.jieyu.ai/images/hot/blue-purple-gradient.jpg">
+<img src="https://images.jieyu.ai/images/hot/blue-purple-gradient.jpg"
+    style="border-radius: 50%;box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
 
-this is Card without a Title
+## level2 head
+
+<p style="color: grey">
+this is Card without a title</p>
+
 </Card>
 
 <!--left-->
@@ -500,7 +603,7 @@ v-motion is supported out-of-box.
 # Profile Card
 
 <Profile class="top-250px"
-headerImg="https://images.unsplash.com/photo-1517825729380-9df085a3fbc3?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bW9ybmluZyUyMGNvZmZlZXxlbnwwfDB8MHx8fDA%3D" >
+headerImg="https://images.unsplash.com/photo-1517825729380-9df085a3fbc3?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bW9ybmluZyUyMGNvZmZlZXxlbnwwfDB8MHx8fDA%3D" seq=2>
 
 ### Aaron
 
@@ -519,22 +622,22 @@ headerImg="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=700&au
 
 ```md
 
-<Profile class="top-150px left-250px"
-    headerImg="https://images..jpg" 
-    seq="1">
+<Profile headerImg="https://*.jpg" seq=2>
 
-Since the avatar is not provided, 
-the content of seq is displayed, 
-which is typically a number.
+headerImg is for the background.
+
+Without avatar image, `seq` will be used to
+render the avatar. This can be used for 
+presenting list of things.
 </Profile>
 
 <Profile class="top-150px left-250px"
 headerImg="https://.../*.jpg" 
 avatar="https://.../*.jpg">
 
-### Aaron
+### 宽粉
 
-Course Instructor
+Teaching Assistant
 </Profile>
 ```
 </div>
@@ -577,6 +680,31 @@ Scard is a card variant, which contains a image header and main content area, an
 
 <Arrow x1="1010" y1="400" x2="680" y2="400" stroke-width="2" color="red"/>
 
+---
+
+# Use Icons
+
+- :smile: using icons is very simple, just write `:smile:`
+- :heart: visit https://emojipedia.org/ for more emoji icons
+
+the syntax:
+
+```md
+- :smile: using icons is very simple, just write `:smile:`
+- :heart: visit https://emojipedia.org/ for more emoji icons
+```
+
+!!! Notice
+    Be notified mark before bullet items are removed, so you could use whatever you like as the bullet mark.
+
+---
+layout: image-left
+image: https://images.jieyu.ai/images/hot/adventure.jpg
+---
+
+<h1 class="abs top-40%">What is Slidev?</h1>
+
+<p class="abs top-55%">➠➠ Click for more.</p>
 ---
 
 # What is Slidev?
@@ -643,3 +771,5 @@ class: "text-center"
 # Learn More
 
 [Documentation](https://sli.dev) / [GitHub Repo](https://github.com/slidevjs/slidev)
+
+[大富翁量化课程](http://www.jieyu.ai/articles/coursea/24lectures/intro/)

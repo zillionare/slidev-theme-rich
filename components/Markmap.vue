@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { Transformer } from 'markmap-lib';
 import { Markmap, deriveOptions } from 'markmap-view';
-import { computed, onMounted, onUpdated, ref } from 'vue';
+import { nextTick, onMounted, onUpdated, ref } from 'vue';
 
 const data = ref('')
 const transformer = new Transformer();
@@ -44,7 +44,11 @@ const update = () => {
 
 onUpdated(update);
 
-onMounted(() => {
+onMounted(async () => {
+    if ($renderContext.value !== 'slide') {
+        return
+    }
+
     // 初始化markmap思维导图
     const options = deriveOptions({
         "colorFreezeLevel": props.colorFreezeLevel,
@@ -55,9 +59,9 @@ onMounted(() => {
         "pan": props.pan,
     });
     mm.value = Markmap.create(svgRef.value, options);
+    await nextTick();
 
-
-    setTimeout(update, 500)
+    update();
 })
 </script>
 

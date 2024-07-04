@@ -8,7 +8,13 @@ Slidev-theme-rich
   
 一个Slidev主题，提供丰富的UI组件和令人惊叹的视觉效果。
 
-  
+
+![](https://images.jieyu.ai/images/2024/07/cover.gif)
+![alt text](https://images.jieyu.ai/images/2024/07/mockup-device.gif)
+![](https://images.jieyu.ai/images/2024/07/markmap.gif)
+![](https://images.jieyu.ai/images/2024/07/soartext.gif)
+![](https://images.jieyu.ai/images/2024/07/timeline.gif)
+
 关于Slidev，请参考[Slidev](https://github.com/slidevjs/slidev).
 
  🛠 安装
@@ -47,7 +53,7 @@ Slidev-theme-rich
 
 ###  Device
 
-![alt text](public/device-mockup.png)
+![alt text](https://images.jieyu.ai/images/2024/07/mockup-device.gif)
 
   
 由 Devices.css 提供支持，支持 10 多种设备，包括 iPhone、Macbook、iMac、Galaxy、Google Pixels、Apple-Watch 等。
@@ -66,7 +72,7 @@ Slidev-theme-rich
   
 更多设备名请参考devices.css的文档
 
-####  样式
+####  Styling
 
   
 您可以向组件添加 unocss 指令，即类似 `class="absolute left-50px"` 的指令来调整位置和大小。
@@ -88,7 +94,7 @@ Slidev-theme-rich
   
 您还可以添加特定的样式，就像第 3 行那样。
 
-**请注意，这里我们使用了 `abs` 而不是 `absolute` 。这是一个与后者相同的类。**
+**请注意，这里我们使用了 `abs` 而不是 `absolute` 。这是一个与后者完全相同的类，但书写起来更简洁**
 
 ####  用法示例
 
@@ -109,68 +115,6 @@ Slidev-theme-rich
 
 在示例中，我们只是将视频放入设备的屏幕中。但实际上，任何有效的 html/markdown 内容都可以。
 
-###  Audio
-
-提供带有音量控制、基本淡入、淡出、延迟控制和预定义音频流集合的音频播放。
-
-  
-以下屏幕截图显示了内置音频列表：
-
-![alt text](public/audio.png)
-
-####  props
-
- 
-| name    | type   | default | description                                                                                           |
-| ------- | ------ | ------- | ----------------------------------------------------------------------------------------------------- |
-| at      | number | -1      | controls when the audio is played. It can be overridden by add `controls` attribute on the component. |
-| name    | string | None    | required. The name of predefined audio, or the src url of the audio.                                  |
-| fadeOut | number | 0       | fadeOut time in milliseconds                                                                          |
-| fadeIn  | number | 0       | fadeIn time in milliseconds                                                                           |
-| volume  | number | 1       | the volume of the audio                                                                               |
-| delay   | number | 0       | delay time in milliseconds                                                                            |
-
-
-####  样式
-
-  
-不需要任何样式设计。默认情况下，当 `$slidev.nav.clicks` 等于 `:at` 时，Audio 组件将在后台自动播放，因此没有附加 UI。您可以将 `controls` 添加到其中，如下所示：
-
-```vue
-    <Audio name="wechat-huwo" controls />
-```
-
-  
-这将显示一个播放控制器。
-
-####  用法示例
-
-```html
-    <Audio name="wechat-dingdong" controls />
-    <Audio name="giggling1" :at=0 :delay=3000 :fadeOut=1000/>
-    <Audio name="https://.../*.wav"/>
-```
-
-###  视频
-
-  
-html 视频标签的简单包装。
-
-####  props
-
-  
-name|type|default|description at|number|-1|控制何时显示视频。 -1 表示始终显示，只要页面存在，就始终显示。否则，仅当 `$slidev.nav.clicks` 等于 `at` 时才显示视频。 muted|boolean|false|控制视频是否静音 src|string|None|视频的 src
-
-####  样式
-
-  
-使用通用 unocss 指令来控制视频的位置和大小。
-
-####  用法示例
-
-```html
-    <Video src="https://cdn.pixabay.com/video/2016/09/21/5373-183629075_medium.mp4" class="abs top-100px left-100px w-400px h-400px" />
-```
 
 ###  Card
 
@@ -196,7 +140,7 @@ name|type|default|description at|number|-1|控制何时显示视频。 -1 表示
 | color         | string  | rgb(223,248,251) | the title's background color                           |
 | titleFont     | string  | 20px             | font size of the title                                 |
 
-####  样式
+#### Styling
 
   
 使用通用 unocss 指令来控制组件的位置和大小。
@@ -222,7 +166,7 @@ name|type|default|description at|number|-1|控制何时显示视频。 -1 表示
     </Card>
 ```
 
-###  轮廓
+###  Profile
 
 ![alt text](public/profile.png)
 
@@ -242,7 +186,7 @@ name|type|default|description at|number|-1|控制何时显示视频。 -1 表示
 | seq       | string | 1       | 序列号。如果头像存在则将被忽略。 |
 
 
-####  样式
+#### Styling
 
   
 使用通用 unocss 指令来控制组件的位置和大小。
@@ -278,7 +222,7 @@ Card变体的另一个例子。背景和正文被S型曲线分开。
 | background    | 字符串 | ""    | 背景。如果未提供，则将按主题的primary/third 颜色来进行计算 |
 
 
-####  样式
+#### Styling
 
   
 除了 props 中列出的之外，其他部分可以通过通用 unocss 指令指定。
@@ -301,7 +245,32 @@ Card变体的另一个例子。背景和正文被S型曲线分开。
     </Scard>
 ```
 
-###  标记图
+### Anime
+
+Animate.css提供了几十种简单但常用的动画。但直接使用它并不方便，比如需要额外引入css文件，样式声明较长、不易记；如果是退出效果，动画在退出动作执行完之后，仍然会回到原始状态等等。
+
+我们提供Anime这个组件，以便可以更容易地使用Animate.css。
+
+#### props
+
+| name   | type                  | default | description                                              |
+| ------ | --------------------- | ------- | -------------------------------------------------------- |
+| action | String                | ''      | 必须提供，动画名称                                       |
+| dur    | String                | 1s      | 动画持续时间                                             |
+| delay  | String                | 0ms     | 允许实现延迟加载                                         |
+| at     | Number, Array[Number] | -1      | 只在at指定的$clicks时加显示本组件。-1意味着与$clicks无关 |
+
+#### Style
+无特殊样式。调用者传入的样式会绑定到组件上。
+
+#### 用法示例
+
+```
+<Anime class="abs w-full h-full left-20%">Bounce me</Anime>
+```
+
+
+###  Markmap
 
   
 以交互方式显示演示文稿的议程和目录。
@@ -321,7 +290,7 @@ Card变体的另一个例子。背景和正文被S型曲线分开。
 | pan              | boolean | true | 显示控制面板                       |
 
 
-####  样式
+#### Styling
 
   
 使用通用 unocss 指令来控制组件的位置和大小。
@@ -341,6 +310,136 @@ Card变体的另一个例子。背景和正文被S型曲线分开。
 
   
 确保将您的内容封装到一对“\`\`\`”（三个backtits）指令中。
+
+### Timeline
+
+Timeline是故事叙述的好帮手。
+
+![](https://images.jieyu.ai/images/2024/07/timeline.gif)
+
+您通过yaml语法来定义时间轴。其语法是：
+
+```yaml
+
+- event: 1606年
+  img: https://*.jpg w=150 roundCorner="50%" shadow="0 2px 5px rgba(0, 0, 0, 0.5)"
+  title: 第一张股票
+  text: 1606年，荷兰东印度公司发行了人类第一张股票
+```
+
+每一项都有event,img, title,subtitle,text来组成。subtitle和text可以省略。
+
+img字段允许添加参数以指定大小、是否圆角和添加阴影。
+
+使用方法：
+
+```md
+<Timeline class="abs h-full w-full">
+
+your yaml content here
+</Timeline>
+```
+
+### SoarText
+
+如果你只有很少几张图，要通过slidev录制一个好的视频，SoarText将是好帮手。它通过把字幕动画化，弥补了视觉元素的不足。
+
+使用方法：
+
+```md
+<SoarText class="abs top-150px w-80% h-80%  left-50px" :offsetY=200 colorMix="None">
+
+your subtitles here
+</SoarText>
+```
+
+SoarText的内容通过markdown来指定：
+
+```md
+
+Nature’s first green is gold<bg>https://images.unsplash.com/photo-1555465910-31f7f20a184d?q=80&w=600
+
+Her hardest hue to hold
+
+Her early leaf’s a flower<bg>https://images.unsplash.com/photo-1478217655296-6ca53ca4b677?w=800
+
+But only so an hour
+
+Then leaf subsides to leaf
+
+So Eden sank to grief
+
+So dawn goes down to day
+
+Nothing gold can stay
+```
+
+每一行将在屏幕上作为一个独立的显示部分，当文本较多时，自动缩小字体，反之，自动放大字体。它由文本及背景指标组成。背景可以指定为一张图片。它与显示文本间通过<bg>来分隔。
+
+
+
+###  Audio
+
+提供带有音量控制、基本淡入、淡出、延迟控制和预定义音频流集合的音频播放。
+
+  
+以下屏幕截图显示了内置音频列表：
+
+![alt text](public/audio.png)
+
+####  props
+
+ 
+| name    | type   | default | description                                                                                           |
+| ------- | ------ | ------- | ----------------------------------------------------------------------------------------------------- |
+| at      | number | -1      | controls when the audio is played. It can be overridden by add `controls` attribute on the component. |
+| name    | string | None    | required. The name of predefined audio, or the src url of the audio.                                  |
+| fadeOut | number | 0       | fadeOut time in milliseconds                                                                          |
+| fadeIn  | number | 0       | fadeIn time in milliseconds                                                                           |
+| volume  | number | 1       | the volume of the audio                                                                               |
+| delay   | number | 0       | delay time in milliseconds                                                                            |
+
+
+#### Styling
+
+  
+不需要任何样式设计。默认情况下，当 `$slidev.nav.clicks` 等于 `:at` 时，Audio 组件将在后台自动播放，因此没有附加 UI。您可以将 `controls` 添加到其中，如下所示：
+
+```vue
+    <Audio name="wechat-huwo" controls />
+```
+
+  
+这将显示一个播放控制器。
+
+####  用法示例
+
+```html
+    <Audio name="wechat-dingdong" controls />
+    <Audio name="giggling1" :at=0 :delay=3000 :fadeOut=1000/>
+    <Audio name="https://.../*.wav"/>
+```
+
+###  Video
+
+  
+html 视频标签的简单包装。
+
+####  props
+
+  
+name|type|default|description at|number|-1|控制何时显示视频。 -1 表示始终显示，只要页面存在，就始终显示。否则，仅当 `$slidev.nav.clicks` 等于 `at` 时才显示视频。 muted|boolean|false|控制视频是否静音 src|string|None|视频的 src
+
+#### Styling
+
+  
+使用通用 unocss 指令来控制视频的位置和大小。
+
+####  用法示例
+
+```html
+    <Video src="https://cdn.pixabay.com/video/2016/09/21/5373-183629075_medium.mp4" class="abs top-100px left-100px w-400px h-400px" />
+```
 
  🔌 插件
 ------
