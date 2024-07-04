@@ -1,6 +1,8 @@
 # Slidev-theme-rich
 
-[English](README.md) [Live demo](https://zillionare.github.io/slidev-theme-rich/)
+[English](README.md) 
+▶️▶️[Live demo](https://zillionare.github.io/slidev-theme-rich/)
+[Github](https://github.com/zillionare/slidev-theme-rich)
 
 [![NPM version](https://img.shields.io/npm/v/slidev-theme-rich?color=3AB9D4&label=)](https://www.npmjs.com/package/slidev-theme-rich)
 

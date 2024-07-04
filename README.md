@@ -1,6 +1,8 @@
 # slidev-theme-rich
 
-[中文文档](README-cn.md) [Live demo](https://zillionare.github.io/slidev-theme-rich/)
+[中文文档](https://github.com/zillionare/slidev-theme-rich/blob/main/README-cn.md) 
+[Live demo](https://zillionare.github.io/slidev-theme-rich/)
+[Github](https://github.com/zillionare/slidev-theme-rich)
 
 [![NPM version](https://img.shields.io/npm/v/slidev-theme-rich?color=3AB9D4&label=)](https://www.npmjs.com/package/slidev-theme-rich)
 
@@ -19,7 +21,7 @@ A Slidev theme that offers rich UI components and stunning visual effects. The f
 * [Animation](#animated-css)
 
 ![](https://images.jieyu.ai/images/2024/07/cover.gif)
-![alt text](https://images.jieyu.ai/images/2024/07/mockup-device.gif)
+![](https://images.jieyu.ai/images/2024/07/mockup-device.gif)
 ![](https://images.jieyu.ai/images/2024/07/markmap.gif)
 ![](https://images.jieyu.ai/images/2024/07/soartext.gif)
 ![](https://images.jieyu.ai/images/2024/07/timeline.gif)

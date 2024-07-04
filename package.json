@@ -1,7 +1,11 @@
 {
   "name": "slidev-theme-rich",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "type": "module",
+  "description": "A Slidev theme that offers rich UI components and stunning visual effects. ",
+  "documentaion":{
+    "zh": "README-cn.md"
+  },
   "keywords": [
     "slidev-theme",
     "slidev",
@@ -9,6 +13,8 @@
     "animate-css",
     "markdown admonition",
     "markmap",
+    "timeline",
+    "vue3",
     "device mockup"
   ],
   "engines": {
