@@ -18,6 +18,12 @@ A Slidev theme that offers rich UI components and stunning visual effects. The f
 * [Video](#video) 
 * [Animation](#animated-css)
 
+![](https://images.jieyu.ai/images/2024/07/cover.gif)
+![alt text](https://images.jieyu.ai/images/2024/07/mockup-device.gif)
+![](https://images.jieyu.ai/images/2024/07/markmap.gif)
+![](https://images.jieyu.ai/images/2024/07/soartext.gif)
+![](https://images.jieyu.ai/images/2024/07/timeline.gif)
+
 For what is Slidev, please refer to [Slidev](https://github.com/slidevjs/slidev).
 
 <!--
@@ -180,6 +186,130 @@ use generic unocss directive to control the position and size of the video.
 <Video src="https://cdn.pixabay.com/video/2016/09/21/5373-183629075_medium.mp4" class="abs top-100px left-100px w-400px h-400px" />
 ```
 
+### Anime
+
+Animate.css offers dozens of simple yet commonly used animations. However, direct usage can be inconvenient, requiring additional CSS file imports, lengthy and unwieldy style declarations, and, for exit effects, the animation reverses to its original state after the exit action completes, among other issues.
+
+We provide the Anime component to facilitate easier utilization of Animate.css.
+
+#### props
+
+| name   | type                  | default | description                                                                                                                                   |
+| ------ | --------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| action | String                | ''      | required, the name of animation                                                                                                               |
+| dur    | String                | 1s      | duration of the animation                                                                                                                     |  |
+| delay  | String                | 0ms     | allow delay load of the animation                                                                                                             |
+| at     | Number, Array[Number] | -1      | Display the component only when triggered by the specified $clicks event. A value of -1 indicates that the component is unrelated to $clicks. |
+
+#### Style
+
+
+No special styling is applied. Styles passed by the caller will be bound to the component.
+
+#### Example Usage
+
+```
+<Anime class="abs w-full h-full left-20%">Bounce me</Anime>
+```
+
+### Markmap
+
+Interactive display of the agenda and table of contents for the presentation.
+
+It's actually the Vue version of mindmap.
+
+#### Styling
+
+No special styling is applied. Styles passed by the caller will be bound to the component.
+
+You could Use generic unocss directive to control the position and size of the component.
+
+####  Example Usage
+
+```html
+    <Markmap class="abs top-400px left-50px w-full">
+    
+    ` ``
+    ## level1
+    ### level2
+    ## level1
+    ` ``
+    </Markmap>
+```
+
+Ensure that your content is enclosed within a pair of "```" (three backticks) directives.
+
+### Timeline
+
+Timeline is a great tool for storytelling.
+
+![](https://images.jieyu.ai/images/2024/07/timeline.gif)
+
+You define timelines using YAML syntax. The syntax is as follows:
+
+```yaml
+
+- event: 1606年
+  img: https://*.jpg w=150 roundCorner="50%" shadow="0 2px 5px rgba(0, 0, 0, 0.5)"
+  title: 第一张股票
+  text: 1606年，荷兰东印度公司发行了人类第一张股票
+```
+
+Each item consists of event, img, title, subtitle, and text, with subtitle and text being optional.
+
+The img field allows parameters to specify size, whether it's rounded, and to add shadows.
+
+Usage Example:
+
+```md
+<Timeline class="abs h-full w-full">
+
+your yaml content here, replace this with a yaml block as below.
+</Timeline>
+```
+
+```yaml
+
+- event: 1606
+  img: https://*.jpg w=150 roundCorner="50%"
+  title: The first IPO
+  text: In 1606, the Dutch East India Company issued the world's first stock.
+```
+
+### SoarText
+
+If you have only a few images and want to create an engaging video using Slidev, SoarText can be a valuable asset. It enhances the visual experience by animating subtitles, compensating for a lack of visual elements.
+
+Usage:
+
+```md
+<SoarText class="abs top-150px w-80% h-80%  left-50px" :offsetY=200 colorMix="None">
+
+your subtitles here. Replace it with a markdown block as below showing.
+</SoarText>
+```
+
+The content for SoarText is specified using markdown:
+
+```md
+
+Nature’s first green is gold<bg>https://images.unsplash.com/photo-1555465910-31f7f20a184d?q=80&w=600
+
+Her hardest hue to hold
+
+Her early leaf’s a flower<bg>https://images.unsplash.com/photo-1478217655296-6ca53ca4b677?w=800
+
+But only so an hour
+
+Then leaf subsides to leaf
+
+So Eden sank to grief
+
+So dawn goes down to day
+
+Nothing gold can stay
+```
+
 ### Card
 
 A **good** PowerPoint presentation should **strive** to use **minimal** text. 
@@ -339,7 +469,7 @@ use generic unocss directive to control the position and size of the component.
 
 Make sure wraps you content into "```" (three backtits) directive.
 
-## 🔌 Plugin
+## 🔌 Plugins
 
 ### Admonition
 
@@ -396,3 +526,26 @@ The element will automatically bounce the element when the page is loaded.
 - Edit the `example.md` and style to see the changes
 - `npm run export` to generate the preview PDF
 - `npm run screenshot` to generate the preview PNG
+
+## History
+
+### 0.2 
+- Release at July 4, 2024
+- Features:
+  - SoarText
+  - Timeline
+  - Anime
+- Fixed:
+  - Markmap may not load upon the initial display and might require a page refresh to become visible.
+
+### 0.1
+- Released at June, 2024
+- Features:
+  - Device Mockup
+  - Markmap
+  - Card (naive and s-curve split card)
+  - Profile
+  - Audio
+  - Video
+  - Markdown admonition
+  - Emoji Icon

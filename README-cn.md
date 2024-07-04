@@ -1,12 +1,11 @@
-Slidev-theme-rich
-========
+# Slidev-theme-rich
 
 [English](README.md) [Live demo](https://zillionare.github.io/slidev-theme-rich/)
 
 [![NPM version](https://img.shields.io/npm/v/slidev-theme-rich?color=3AB9D4&label=)](https://www.npmjs.com/package/slidev-theme-rich)
 
   
-一个Slidev主题，提供丰富的UI组件和令人惊叹的视觉效果。
+Rich是一个Slidev主题，它提供丰富的UI组件和令人惊叹的视觉效果。
 
 
 ![](https://images.jieyu.ai/images/2024/07/cover.gif)
@@ -17,23 +16,20 @@ Slidev-theme-rich
 
 关于Slidev，请参考[Slidev](https://github.com/slidevjs/slidev).
 
- 🛠 安装
-------
+[在线演示](https://zillionare.github.io/slidev-theme-rich/)
 
-  
+## 🛠 安装
+
 将以下 frontmatter 添加到您的 `slides.md` 中。启动Slidev然后它会提示你自动安装本主题。
 
-    ---
+```yaml
     theme: rich
-    ---
+```
 
-  
 对于主题提供的内容，您可以参考 [Demo](https://zillionare.github.io/slidev-theme-rich)以了解有关如何使用主题的更多信息。
 
- 💼 布局
-------
+## 💼布局
 
-  
 该主题提供以下布局：
 
 ###  cover
@@ -43,15 +39,14 @@ Slidev-theme-rich
   
 对于其他布局，只需使用内置的 Slidev 即可。
 
- 🧩 componentss
-------
+## 🧩 components
 
 **提示：几乎每个组件都支持 v-motion，因此您不必另外声明。**
 
   
 该主题提供以下组件：
 
-###  Device
+###  Device Mockup
 
 ![alt text](https://images.jieyu.ai/images/2024/07/mockup-device.gif)
 
@@ -114,136 +109,6 @@ Slidev-theme-rich
 ```
 
 在示例中，我们只是将视频放入设备的屏幕中。但实际上，任何有效的 html/markdown 内容都可以。
-
-
-###  Card
-
-  
-一个好的 PowerPoint 演示文稿应尽量使用最少的文本。如果需要文本，则应对其进行有效组织。这就是为什么我们需要 Card 组件。
-
-  
-最初的版本提供了三种卡，naive卡、profile卡和Scard卡。
-
-![alt text](public/naive-card.png)
-
-  
-正如屏幕截图所示，一张简单的卡片就像一个 CSS 框一样简单。
-
-####  props
-
-| name          | type    | default          | description                                            |
-| ------------- | ------- | ---------------- | ------------------------------------------------------ |
-| title         | string  | None             | if provided, the card will contains a title            |
-| titleAlign    | string  | left             | controls how the title aligned horizontally.           |
-| contentAlign  | string  | justify          | controls how the main content aligns.                  |
-| gradientTitle | boolean | false            | if true, a gradient background is drawed at title area |
-| color         | string  | rgb(223,248,251) | the title's background color                           |
-| titleFont     | string  | 20px             | font size of the title                                 |
-
-#### Styling
-
-  
-使用通用 unocss 指令来控制组件的位置和大小。
-
-####  用法示例
-
-```html
-    <Card title="Card with header"
-          :enter="{opacity: 1}"
-          :click-1="{opacity: 0}">
-    
-    this is naive card with a Title. 
-    v-motion is supported out-of-box.
-    </Card>
-    
-    <Card :enter="{opacity: 1}"
-          :click-1="{opacity: 0}"
-          class="abs top-250px left-450px w-300px h-450px">
-    
-    <img src="https://images.jieyu.ai/images/hot/blue-purple-gradient.jpg">
-    
-    this is Card without a Title
-    </Card>
-```
-
-###  Profile
-
-![alt text](public/profile.png)
-
-  
-使用此组件来显示人员的个人资料。它需要一个头像img src，如果没有提供，只需使用数字，然后它可以用作带有步骤的列表。
-
-####  props
-
-  
-| name      | type   | default | description                      |
-| --------- | ------ | ------- | -------------------------------- |
-| headerImg | string | None    | 必填，标题背景图片的src          |
-| avatar    | string | None    | 头像图片的src                    |
-| w         | string | 300px   | 盒子的宽度                       |
-| h         | string | 450px   | 高度框                           |
-| fontSize  | string | 14px    | 字体大小                         |
-| seq       | string | 1       | 序列号。如果头像存在则将被忽略。 |
-
-
-#### Styling
-
-  
-使用通用 unocss 指令来控制组件的位置和大小。
-
-####  用法示例
-
-```html
-    <Profile class="top-250px"
-    headerImg="https://images.unsplash.com/photo-1517825729380-9df085a3fbc3?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bW9ybmluZyUyMGNvZmZlZXxlbnwwfDB8MHx8fDA%3D" >
-    
-    ### Aaron
-    
-    Course Instructor
-    </Profile>
-```
-
-###  Scard
-
-![alt text](public/scard.png?1)
-
-  
-Card变体的另一个例子。背景和正文被S型曲线分开。
-
-####  props
-
-  
-| 名称          | 类型   | 默认  | 描述                                                       |
-| ------------- | ------ | ----- | ---------------------------------------------------------- |
-| w             | 字符串 | 300px | 卡片的宽度                                                 |
-| h             | 字符串 | 450px | 卡片的高度                                                 |
-| round         | 字符串 | 10px  | 卡片的半径                                                 |
-| contentHeight | 字符串 | 100%  | 卡片的高度内容区域背景                                     |
-| background    | 字符串 | ""    | 背景。如果未提供，则将按主题的primary/third 颜色来进行计算 |
-
-
-#### Styling
-
-  
-除了 props 中列出的之外，其他部分可以通过通用 unocss 指令指定。
-
-####  用法示例
-
-```html
-    <Scard background="url('https://.../*.jpg') no-repeat center center / cover" 
-        h="450px" w="300px"
-        class="top-250px left-50px">
-       the content of the box
-    </Scard>
-    
-    <Scard background="url('https://.../*.jpg') no-repeat center center / cover" 
-        h="450px" 
-        w="300px"
-        contentHeight="400px"
-        class="left-400px top-250px">
-       the content of the box
-    </Scard>
-```
 
 ### Anime
 
@@ -376,6 +241,137 @@ Nothing gold can stay
 
 每一行将在屏幕上作为一个独立的显示部分，当文本较多时，自动缩小字体，反之，自动放大字体。它由文本及背景指标组成。背景可以指定为一张图片。它与显示文本间通过<bg>来分隔。
 
+###  Card
+
+  
+一个好的 PowerPoint 演示文稿应尽量使用最少的文本。如果需要文本，则应对其进行有效组织。这就是为什么我们需要 Card 组件。
+
+  
+最初的版本提供了三种卡，naive卡、profile卡和Scard卡。
+
+![alt text](public/naive-card.png)
+
+  
+正如屏幕截图所示，一张简单的卡片就像一个 CSS 框一样简单。
+
+####  props
+
+| name          | type    | default          | description                                            |
+| ------------- | ------- | ---------------- | ------------------------------------------------------ |
+| title         | string  | None             | if provided, the card will contains a title            |
+| titleAlign    | string  | left             | controls how the title aligned horizontally.           |
+| contentAlign  | string  | justify          | controls how the main content aligns.                  |
+| gradientTitle | boolean | false            | if true, a gradient background is drawed at title area |
+| color         | string  | rgb(223,248,251) | the title's background color                           |
+| titleFont     | string  | 20px             | font size of the title                                 |
+
+#### Styling
+
+  
+使用通用 unocss 指令来控制组件的位置和大小。
+
+####  用法示例
+
+```html
+    <Card title="Card with header"
+          :enter="{opacity: 1}"
+          :click-1="{opacity: 0}">
+    
+    this is naive card with a Title. 
+    v-motion is supported out-of-box.
+    </Card>
+    
+    <Card :enter="{opacity: 1}"
+          :click-1="{opacity: 0}"
+          class="abs top-250px left-450px w-300px h-450px">
+    
+    <img src="https://images.jieyu.ai/images/hot/blue-purple-gradient.jpg">
+    
+    this is Card without a Title
+    </Card>
+```
+
+###  Profile
+
+![alt text](public/profile.png)
+
+  
+使用此组件来显示人员的个人资料。它需要一个头像img src，如果没有提供，只需使用数字，然后它可以用作带有步骤的列表。
+
+####  props
+
+  
+| name      | type   | default | description                      |
+| --------- | ------ | ------- | -------------------------------- |
+| headerImg | string | None    | 必填，标题背景图片的src          |
+| avatar    | string | None    | 头像图片的src                    |
+| w         | string | 300px   | 盒子的宽度                       |
+| h         | string | 450px   | 高度框                           |
+| fontSize  | string | 14px    | 字体大小                         |
+| seq       | string | 1       | 序列号。如果头像存在则将被忽略。 |
+
+
+#### Styling
+
+  
+使用通用 unocss 指令来控制组件的位置和大小。
+
+####  用法示例
+
+```html
+    <Profile class="top-250px"
+    headerImg="https://images.unsplash.com/photo-1517825729380-9df085a3fbc3?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bW9ybmluZyUyMGNvZmZlZXxlbnwwfDB8MHx8fDA%3D" >
+    
+    ### Aaron
+    
+    Course Instructor
+    </Profile>
+```
+
+###  Scard
+
+![alt text](public/scard.png?1)
+
+  
+Card变体的另一个例子。背景和正文被S型曲线分开。
+
+####  props
+
+  
+| 名称          | 类型   | 默认  | 描述                                                       |
+| ------------- | ------ | ----- | ---------------------------------------------------------- |
+| w             | 字符串 | 300px | 卡片的宽度                                                 |
+| h             | 字符串 | 450px | 卡片的高度                                                 |
+| round         | 字符串 | 10px  | 卡片的半径                                                 |
+| contentHeight | 字符串 | 100%  | 卡片的高度内容区域背景                                     |
+| background    | 字符串 | ""    | 背景。如果未提供，则将按主题的primary/third 颜色来进行计算 |
+
+
+#### Styling
+
+  
+除了 props 中列出的之外，其他部分可以通过通用 unocss 指令指定。
+
+####  用法示例
+
+```html
+    <Scard background="url('https://.../*.jpg') no-repeat center center / cover" 
+        h="450px" w="300px"
+        class="top-250px left-50px">
+       the content of the box
+    </Scard>
+    
+    <Scard background="url('https://.../*.jpg') no-repeat center center / cover" 
+        h="450px" 
+        w="300px"
+        contentHeight="400px"
+        class="left-400px top-250px">
+       the content of the box
+    </Scard>
+```
+
+
+
 
 
 ###  Audio
@@ -441,10 +437,10 @@ name|type|default|description at|number|-1|控制何时显示视频。 -1 表示
     <Video src="https://cdn.pixabay.com/video/2016/09/21/5373-183629075_medium.mp4" class="abs top-100px left-100px w-400px h-400px" />
 ```
 
- 🔌 插件
-------
+## 🔌 插件
 
-###  警告
+
+###  Admonition
 
 ![alt text](public/admonition.png)
 
@@ -478,8 +474,7 @@ Admonition 是另一种卡片，但它是由 markdown-it 插件而不是组件�
 
 **仅 Github 短代码有效**
 
- 参与开发
----
+## 参与开发
 
 *   `npm install`
 *     
@@ -490,3 +485,25 @@ Admonition 是另一种卡片，但它是由 markdown-it 插件而不是组件�
     `npm run export` 生成预览 PDF
 *     
     `npm run screenshot` 生成预览 PNG
+
+## History
+
+### 0.2 
+- Release at July 4, 2024
+- Features:
+  - SoarText
+  - Timeline
+  - Anime
+- Fixed:
+  - Markmap在初次显示时，可能无法加载，需要刷新一次才能显示。
+### 0.1
+- Released at June, 2024
+- Features:
+  - Device Mockup
+  - Markmap
+  - Card (naive and s-curve split card)
+  - Profile
+  - Audio
+  - Video
+  - Markdown admonition
+  - Emoji Icon
