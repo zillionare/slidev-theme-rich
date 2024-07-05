@@ -438,7 +438,7 @@ Powered by [Animate.css](https://animate.style/)
 
 ---
 layout: two-cols
-clicks: 3
+clicks: 4
 ---
 
 # Animation III
@@ -461,6 +461,17 @@ Builds upon animate.css, Rich Theme offering a more streamlined animation experi
     Fade out right big
 </Anime>
 
+<Anime :at=4 action="fadeInRightBig" dur="5s" class="abs top-0px left--50px">
+
+<Profile class="top-250px left-450px relative"
+headerImg="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fHNreXxlbnwwfDB8MHx8fDA%3D" avatar="https://images.unsplash.com/photo-1483181957632-8bda974cbc91?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmVkJTIwbGlwc3RpY2t8ZW58MHwwfDB8fHww">
+
+### 宽粉
+
+<p>Teaching Assistant</p>
+</Profile>
+</Anime>
+
 ::right::
 
 ```md
@@ -472,6 +483,16 @@ Builds upon animate.css, Rich Theme offering a more streamlined animation experi
 <Anime :at=1 action="jackInTheBox" 
        dur="3s">
     jack In The Box
+</Anime>
+
+<Anime action="fadeIn" dur="5s">
+
+<Profile headerImg="*.jpg" avatar="*.jpg">
+
+### 宽粉
+
+<p>Teaching Assistant</p>
+</Profile>
 </Anime>
 ```
 
@@ -679,6 +700,68 @@ Scard is a card variant, which contains a image header and main content area, an
 </div>
 
 <Arrow x1="1010" y1="400" x2="680" y2="400" stroke-width="2" color="red"/>
+
+---
+clicks: 3
+---
+
+# Floating Card
+
+<FloatingCard :at=[0,1,2,3]
+    class="abs w-300px h-500px top-200px left-100px">
+
+```yaml
+
+color: "#F5C345"
+capping: header
+seq: "01"
+title: LOREM IPSUM
+desc: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+```
+
+</FloatingCard>
+
+<FloatingCard :at=[1,2,3]
+    class="abs w-300px h-500px top-200px left-470px">
+
+```yaml
+
+color: "red"
+capping: footer
+seq: "02"
+title: LOREM IPSUM
+desc: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+```
+
+</FloatingCard>
+
+<FloatingCard :at=[2,3]
+    class="abs w-300px h-500px top-200px left-840px">
+
+```yaml
+
+color: "#8EBC70"
+capping: header
+seq: "03"
+title: LOREM IPSUM
+desc: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+```
+
+</FloatingCard> 
+
+<FloatingCard :at=[3]
+    class="abs w-300px h-500px top-200px left-1210px">
+
+```yaml
+
+color: "#6F95BB"
+capping: footer
+seq: "04"
+title: LOREM IPSUM
+desc: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+```
+
+</FloatingCard>
 
 ---
 

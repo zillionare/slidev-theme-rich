@@ -9,7 +9,7 @@ const animes = reactive([])
 let rendered = {}
 const container = ref(null)
 const backgrounds = {}
-const view = ref([])
+const view = ref({})
 let observer
 
 const props = defineProps({

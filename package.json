@@ -1,11 +1,8 @@
 {
   "name": "slidev-theme-rich",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "type": "module",
   "description": "A Slidev theme that offers rich UI components and stunning visual effects. ",
-  "documentaion":{
-    "zh": "README-cn.md"
-  },
   "keywords": [
     "slidev-theme",
     "slidev",
@@ -44,7 +41,7 @@
   },
   "//": "Learn more: https://sli.dev/themes/write-a-theme.html",
   "slidev": {
-    "colorSchema": "both",
+    "colorSchema": "light",
     "highlighter": "all",
     "defaults": {
       "fonts": {

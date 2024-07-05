@@ -14,11 +14,13 @@ A Slidev theme that offers rich UI components and stunning visual effects. The f
   * [Profile Card](#profile)
   * [S-curve split Card](#scard)
   * [Markdown admonition card](#admonition)
+  * [Floating Card]()
 * [Markmap](#markmap)
 * [Emoji](#markdown-icon)
 * [Audio](#audio) with volume control, fadein and out
 * [Video](#video) 
 * [Animation](#animated-css)
+
 
 ![](https://images.jieyu.ai/images/2024/07/cover.gif)
 ![](https://images.jieyu.ai/images/2024/07/mockup-device.gif)
@@ -191,6 +193,8 @@ use generic unocss directive to control the position and size of the video.
 ### Anime
 
 Animate.css offers dozens of simple yet commonly used animations. However, direct usage can be inconvenient, requiring additional CSS file imports, lengthy and unwieldy style declarations, and, for exit effects, the animation reverses to its original state after the exit action completes, among other issues.
+
+![](https://images.jieyu.ai/images/2024/07/anime.gif)
 
 We provide the Anime component to facilitate easier utilization of Animate.css.
 
@@ -432,6 +436,29 @@ Except listed in props, the other part can be specified by generic unocss direct
 </Scard>
 ```
 
+### Floating Card
+
+![](https://images.jieyu.ai/images/2024/07/float3dcard.png)
+
+It consists of a seq number, a title and a description.
+
+#### Example Usage
+
+```
+<FloatingCard :at=[0,1,2,3]
+    class="abs w-300px h-500px top-200px left-100px">
+
+```yaml
+
+color: "#F5C345"
+capping: header
+seq: "01"
+title: LOREM IPSUM
+desc: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+```
+
+</FloatingCard>
+```
 
 ### Markmap
 
@@ -531,6 +558,12 @@ The element will automatically bounce the element when the page is loaded.
 
 ## History
 
+### 0.3
+- Released at July 5, 2024
+- Features:
+  - Floating Card
+- Fixed:
+  - markmap doesn't work when theme is installed from npmjs
 ### 0.2 
 - Release at July 4, 2024
 - Features:

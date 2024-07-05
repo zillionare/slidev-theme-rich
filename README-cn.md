@@ -372,7 +372,26 @@ Card变体的另一个例子。背景和正文被S型曲线分开。
     </Scard>
 ```
 
+### Floating Card
 
+![](https://images.jieyu.ai/images/2024/07/float3dcard.png)
+
+由一个序号、标题和描述文字组成。适合用于展示一个列表。
+
+#### 用法示例
+
+```
+<FloatingCard :at=[0,1,2,3]
+    class="abs w-300px h-500px top-200px left-100px">
+
+```yaml
+
+color: "#F5C345"
+capping: header
+seq: "01"
+title: LOREM IPSUM
+desc: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+```
 
 
 
@@ -489,6 +508,13 @@ Admonition 是另一种卡片，但它是由 markdown-it 插件而不是组件�
     `npm run screenshot` 生成预览 PNG
 
 ## History
+
+### 0.3
+- Released at July 5, 2024
+- Features:
+  - Floating Card
+- Fixed:
+  - markmap doesn't work when theme is installed from npmjs
 
 ### 0.2 
 - Release at July 4, 2024

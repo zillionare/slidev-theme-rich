@@ -1,3 +1,23 @@
+<!-- 
+    A vertical timeline.
+
+    https://images.jieyu.ai/images/2024/07/timeline.gif
+
+    Usage:
+
+    <div class="abs left-50px top-400px">
+
+    ```yaml
+
+    - event: 1606年
+    img: https://*.jpg w=150 roundCorner="50%"
+    title: 第一张股票
+    text: 1606年，荷兰东印度公司发行了人类第一张股票
+    ```
+    </div>
+
+
+-->
 <script setup>
 
 import { ref, onMounted, reactive, watchEffect, nextTick } from 'vue';
