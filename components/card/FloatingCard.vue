@@ -38,10 +38,13 @@ onMounted(async () => {
 
     observer = new ResizeObserver(entries => {
         for (let entry of entries) {
+            // todo： use entry.borderBoxSize instead
             const { width, height, top, left } = entry.contentRect;
             if (width === 0 || height === 0) {
                 continue
             }
+
+            console.log("entry is", entry)
 
             let cx = width * 0.15
             let cy = height * 0.1

@@ -38,11 +38,8 @@ const props = defineProps({
 const boxStyle = computed(() => {
     // var borderColor = tinycolor(props.color).darken(20).toString();
     return {
-        "position": "absolute",
-        // "border-left": `.2rem solid ${borderColor}`,
         "margin": "1.5625em 0",
         "padding": "0 1.2rem 1rem 1.2rem",
-        // "border-left": .4rem solid rgba(68, 138, 255, .8);
         "box-shadow": "0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12), 0 3px 1px -2px rgba(0, 0, 0, .2)",
         "border-radius": ".2rem",
         "background-color": "rgba(255, 255, 255, 0.05)",

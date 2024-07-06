@@ -237,7 +237,7 @@ watchEffect(() => {
 
         cum += item.fontSize + 30
         animes[i].style.top = view.value.height - cum - props.offsetY + "px"
-        console.log("calc top:", animes[i].text, view.value.height - cum - props.offsetY + "px")
+        console.debug("calc top:", animes[i].text, view.value.height - cum - props.offsetY + "px")
     }
 })
 

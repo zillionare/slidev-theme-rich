@@ -28,6 +28,7 @@ export function isShow(rng, click) {
 /*
  * css
  */
+
 export function mergeTransform(baseTransform, additionalTransform) {
     // If there's no base transform, just return the additional one.
     if (!baseTransform) return additionalTransform;
